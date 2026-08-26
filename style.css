@@ -1,0 +1,229 @@
+/* --- ISUFST OFFICIAL THEME --- */
+:root {
+    --primary-blue: #003366;
+    --primary-blue-dark: #001a35;
+    --secondary-gold: #FFC72C;
+    --white: #ffffff;
+    --glass-white: rgba(255, 255, 255, 0.92);
+    --text-dark: #1E293B;
+    --text-muted: #64748B;
+    --radius-lg: 24px;
+    --radius-sm: 12px;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* --- DYNAMIC PAGE BACKGROUND --- */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+    
+    /* BACKGROUND IMAGE SETTINGS */
+    /* Dark gradient overlay ensures text is readable against the sky */
+    background: linear-gradient(rgba(0, 34, 68, 0.8), rgba(0, 34, 68, 0.8)), 
+                url('Meet the Campus Leadership/img/bg.png'); /* Ensure this filename matches your image */
+    
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax Effect: Image stays still while scrolling */
+    background-repeat: no-repeat;
+}
+
+/* --- HEADER STYLING --- */
+.main-header {
+    padding: 100px 20px 120px;
+    text-align: center;
+    color: var(--white);
+}
+
+.header-content {
+    animation: fadeInUp 1s ease-out;
+}
+
+.header-content h1 {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 10px 0;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+.header-content p {
+    color: var(--secondary-gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: 0.9rem;
+}
+
+.header-accent {
+    height: 5px;
+    width: 70px;
+    background: var(--secondary-gold);
+    margin: 25px auto 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(255, 199, 44, 0.4);
+}
+
+/* --- MAIN CONTENT CONTAINER (GLASSMORPHISM) --- */
+.container {
+    max-width: 1240px;
+    margin: -60px auto 100px; /* Pulls container up over the background */
+    padding: 60px 40px;
+    background: var(--glass-white);
+    backdrop-filter: blur(10px); /* Modern blur effect */
+    border-radius: var(--radius-lg);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* --- SECTION TITLES --- */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tier-label {
+    text-align: center;
+    margin: 60px 0 30px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tier-label::before, .tier-label::after {
+    content: "";
+    height: 1px;
+    background: #cbd5e1;
+    flex-grow: 1;
+    max-width: 120px;
+}
+
+/* --- CENTERED FLEX GRID --- */
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center; /* PERFECTLY CENTERS incomplete rows */
+    align-items: stretch;    /* Keeps all cards in a row the same height */
+}
+
+/* --- DYNAMIC LEADERSHIP CARDS --- */
+.card {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 40px 25px;
+    width: 290px; /* CONSISTENT WIDTH for all cards */
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    border: 1px solid rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    animation: fadeIn 1s ease-in;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.15);
+    border-color: var(--secondary-gold);
+}
+
+/* SPECIAL HIGHLIGHT FOR PRESIDENT/DEANS */
+.highlight-card {
+    border-top: 6px solid var(--secondary-gold);
+    background: linear-gradient(to bottom, #ffffff, #fffef9);
+}
+
+/* --- CIRCLE IMAGE HOLDER --- */
+.image-holder {
+    flex-shrink: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    overflow: hidden;
+    background: #f8fafc;
+    border: 4px solid var(--white);
+    box-shadow: 0 0 0 3px var(--primary-blue);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card:hover .image-holder {
+    box-shadow: 0 0 0 4px var(--secondary-gold);
+    transform: scale(1.05);
+}
+
+.image-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- CARD TYPOGRAPHY --- */
+.card-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-info h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+    min-height: 3rem; /* Ensures cards align if names wrap to 2 lines */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-info .title {
+    font-size: 0.85rem;
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-top: auto; /* Pushes position to bottom of card */
+    line-height: 1.4;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- FOOTER --- */
+.main-footer {
+    background: var(--primary-blue-dark);
+    color: #94a3b8;
+    padding: 60px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .container { margin: 20px; padding: 40px 20px; }
+    .card { width: 100%; max-width: 320px; }
+    .main-header { padding: 60px 20px; }
+}
