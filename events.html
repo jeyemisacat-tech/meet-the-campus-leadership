@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | ISUFST San Enrique Campus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html" class="site-brand">
+            <span class="site-brand-name">ISUFST</span>
+            <span class="site-brand-campus">San Enrique Campus</span>
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+            ☰
+        </button>
+
+        <div class="site-nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="events.html" class="active">Events</a>
+        </div>
+    </nav>
+
+    <header class="main-header event-header">
+        <div class="header-content">
+            <p>ISUFST – San Enrique Campus</p>
+            <h1>Campus Events</h1>
+            <p>Celebrating memories, unity, and campus life</p>
+            <div class="header-accent"></div>
+        </div>
+    </header>
+
+    <main class="container event-container">
+        <section class="event-intro">
+            <span class="event-label">CAMPUS LIFE</span>
+            <h2 class="section-title">Moments That Bring Us Together</h2>
+            <p>Discover the activities, celebrations, and memorable experiences that strengthen the ISUFST–San Enrique Campus community.</p>
+        </section>
+
+        <section class="unity-section" id="colors-of-unity">
+            <div class="unity-cover">
+                <img src="img/events/7.jpe" alt="Colors of Unity acquaintance party">
+                <span class="unity-badge">FEATURED EVENT</span>
+            </div>
+
+            <div class="unity-details">
+                <span class="event-label">ACQUAINTANCE PARTY</span>
+                <h2>Colors of Unity</h2>
+                <p>A celebration of friendship, diversity, and togetherness. Colors of Unity brings students together to build connections, share joyful experiences, and create unforgettable memories at ISUFST–San Enrique Campus.</p>
+                <a href="#unity-gallery" class="event-button">Explore the Gallery ↓</a>
+            </div>
+        </section>
+
+        <section class="unity-gallery-section" id="unity-gallery">
+            <div class="gallery-heading">
+                <div>
+                    <span class="event-label">EVENT MEMORIES</span>
+                    <h2 class="section-title">Colors of Unity</h2>
+                    <p>A look back at the smiles, friendships, and memorable moments from our acquaintance party.</p>
+                </div>
+            </div>
+
+            <div class="unity-gallery">
+                <figure class="unity-photo">
+                    <img src="img/events/1.jpe" alt="Colors of Unity event highlights" loading="lazy">
+                    <figcaption class="photo-caption">Opening Parade</figcaption>
+                </figure>
+                <figure class="unity-photo">
+                    <img src="img/events/2.jpe" alt="Students celebrating together" loading="lazy">
+                    <figcaption class="photo-caption">Field Demonstration</figcaption>
+                </figure>
+                <figure class="unity-photo">
+                    <img src="img/events/3.jpe" alt="Students at the acquaintance party" loading="lazy">
+                    <figcaption class="photo-caption">Celebration</figcaption>
+                </figure>
+                <figure class="unity-photo">
+                    <img src="img/events/4.jpe" alt="Students sharing memorable moments" loading="lazy">
+                    <figcaption class="photo-caption">Campus Memories</figcaption>
+                </figure>
+                <figure class="unity-photo">
+                    <img src="img/events/5.jpe" alt="Acquaintance party memories" loading="lazy">
+                    <figcaption class="photo-caption">Lasting Memories</figcaption>
+                </figure>
+                <figure class="unity-photo">
+                    <img src="img/events/6.jpe" alt="ISUFST campus community" loading="lazy">
+                    <figcaption class="photo-caption">Mr. and Ms. Colors of Unity Pageant</figcaption>
+                </figure>
+            </div>
+
+            <p class="gallery-message">Every color represents a story. Every memory brings us closer.</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Iloilo State University of Fisheries Science and Technology | San Enrique Campus</p>
+        <p>San Enrique, Iloilo</p>
+        <p>Website: isufst.edu.ph</p>
+        <p>Contact: (033) 327-3403 / 323-2058</p>
+        <p>Email: sanenriquecampus@gmail.com</p>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById("navToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        navToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("show");
+            navToggle.setAttribute("aria-expanded", String(isOpen));
+        });
+    </script>
+</body>
+</html>
